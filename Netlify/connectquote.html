@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Pet Service Insurance Direct — Instant Quote (ConnectQuote)</title>
   <script src="https://js.stripe.com/v3/"></script>
-  <link rel="stylesheet" href="https://cid-pdf-api.onrender.com/static/connectquote-intake.css?v=20260817a"/>
+  <link rel="stylesheet" href="https://cid-pdf-api.onrender.com/static/connectquote-intake.css?v=20260820a"/>
   <style>
     :root { --brand: #7c3aed; --brand-dark: #6d28d9; --navy: #1B3A5F; }
     * { box-sizing: border-box; }
@@ -16,7 +16,7 @@
     .sub { color: #555; margin-bottom: 20px; }
     label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: .9rem; }
     input, select { width: 100%; padding: 10px 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; }
-    input.prefilled { background: #f5f3ff; border-color: #c4b5fd; }
+    input.prefilled, select.prefilled { background: #f5f3ff; border-color: #c4b5fd; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
     button { background: linear-gradient(135deg, #a78bfa, var(--brand)); color: #fff; border: 0; padding: 14px 20px; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; width: 100%; margin-top: 16px; }
@@ -40,7 +40,7 @@
 <div class="wrap">
   <div class="card">
     <h1>Pet Service Insurance Direct</h1>
-    <p class="sub" id="bridge-text">Colorado pet grooming Colorado fitness studios &amp; trainers — get a quote in minutes.amp; care businesses — get a quote in minutes.</p>
+    <p class="sub" id="bridge-text">Colorado pet service business owners — instant quote in minutes.</p>
 
     <form id="cq-form">
       <div class="row">
@@ -82,8 +82,8 @@
       <label>Do you own or operate this business?</label>
       <select name="is_owner" id="is_owner" required>
         <option value="" selected disabled>Select…</option>
-        <option value="yes">Yes — I own / operate (sole proprietor, LLC, business owner)</option>
-        <option value="no">No — I am an employee / instructor, not the owner</option>
+        <option value="yes">Yes — I own / operate (sole proprietor, LLC, etc.)</option>
+        <option value="no">No — I work for someone else</option>
       </select>
       <label>Business type</label>
       <select name="business_class" id="business_class" required>
@@ -141,6 +141,6 @@ window.CONNECTQUOTE = {
   api: "https://cid-pdf-api.onrender.com"
 };
 </script>
-<script src="https://cid-pdf-api.onrender.com/static/connectquote-intake.js?v=20260817a"></script>
+<script src="https://cid-pdf-api.onrender.com/static/connectquote-intake.js?v=20260820a"></script>
 </body>
 </html>
