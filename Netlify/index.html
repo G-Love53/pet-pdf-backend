@@ -4,13 +4,32 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Pet Service Insurance Direct — Quote</title>
-  <meta http-equiv="refresh" content="0;url=/connectquote.html"/>
   <style>
-    body { font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f3f4f6; }
-    a { color: #7c3aed; font-weight: 700; }
+    body { font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f3f4f6; color: #333; padding: 20px; }
+    .box { max-width: 480px; background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,.08); text-align: center; }
+    a { color: #ea580c; font-weight: 700; }
+    h1 { font-size: 1.25rem; margin: 0 0 12px; color: #1B3A5F; }
+    p { line-height: 1.5; margin: 0 0 12px; }
   </style>
 </head>
 <body>
-  <p>Redirecting to instant quote… <a href="/connectquote.html">Continue</a></p>
+  <div class="box" id="content">
+    <p>Redirecting to instant quote… <a href="/connectquote.html">Continue</a></p>
+  </div>
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      if (p.get("rail") !== "traditional") {
+        location.replace("/connectquote.html" + location.search);
+        return;
+      }
+      var email = "quotes@petserviceinsurancedirect.com";
+      document.getElementById("content").innerHTML =
+        "<h1>Manual quote</h1>" +
+        "<p>Instant ConnectQuote isn’t available for this request.</p>" +
+        '<p>Email <a href="mailto:' + email + "?subject=" + encodeURIComponent("Insurance quote request") + '">' + email + "</a> and our team will follow up.</p>" +
+        '<p><a href="/connectquote.html">← Back to instant quote</a></p>';
+    })();
+  </script>
 </body>
 </html>
